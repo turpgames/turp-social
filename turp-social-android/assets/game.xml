@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game
+    id="Turp Social"
+    class="com.turpgames.social.SocialGame" >
+
+    <params>
+
+        <param
+            key="provider"
+            value="com.turpgames.framework.v0.impl.libgdx.GdxGameProvider" />
+
+        <param
+            key="settings-key"
+            value="com.turpgames.social" />
+
+        <param
+            key="virtual-width"
+            value="550" />
+
+        <param
+            key="virtual-height"
+            value="800" />
+
+        <param
+            key="default-font"
+            value="akachen,1" />
+
+        <param
+            key="default-skin"
+            value="ppt" />
+
+        <param
+            key="default-screen"
+            value="main" />
+
+        <param
+            key="screen-switcher"
+            value="sliding,0.30" />
+
+        <param
+            key="form-switcher"
+            value="sliding,0.30" />
+
+        <param
+            key="allow-exit-on-back"
+            value="true" />
+    </params>
+
+    <screens>
+
+        <screen
+            id="main"
+            class="com.turpgames.social.MainScreen" />
+    </screens>
+
+    <forms>
+
+        <form id="mainMenu" >
+
+            <label
+                id="lblGameName"
+                cols="16"
+                font-scale="1.5"
+                rows="2"
+                text="Turp Social"
+                x="0"
+                y="27"
+                color="#56bd89ff" />
+
+            <button
+                id="btnSocial"
+                action="login-facebook"
+                resource-text="loginFacebook"
+                y="21" />
+        </form>
+    </forms>
+
+    <animations>
+    </animations>
+
+    <resources>
+
+        <fonts>
+
+            <font
+                id="akachen"
+                           path="fonts/chinese/akachen_chinese.fnt" />
+        </fonts>
+
+        <textures>
+        </textures>
+
+        <sounds>
+        </sounds>
+    </resources>
+
+    <languages>
+
+        <language
+            id="en-US"
+            encoding="UTF8"
+            flag-texture-id="flag_en_us"
+            path="lang/Strings_en_US.properties" />
+    </languages>
+
+    <skins>
+
+        <skin id="ppt" >
+
+            <form
+                cols="16"
+                rows="32" />
+
+            <button
+                cols="8"
+                focus-color="#3974b1ff"
+                font-scale="1.2"
+                halign="center"
+                rows="2"
+                vibrate="50"
+                x="4" />
+
+            <label
+                halign="center"
+                rows="2"
+                color="#fff" />
+        </skin>
+    </skins>
+
+</game>
