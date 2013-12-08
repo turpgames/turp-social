@@ -5,6 +5,7 @@ import com.turpgames.framework.v0.forms.xml.IControlActionHandler;
 import com.turpgames.framework.v0.forms.xml.IControlActionHandlerFactory;
 import com.turpgames.framework.v0.impl.BaseGame;
 import com.turpgames.framework.v0.social.ILoginCallback;
+import com.turpgames.framework.v0.social.Player;
 import com.turpgames.framework.v0.util.Game;
 import com.turpgames.framework.v0.util.Utils;
 
@@ -32,7 +33,7 @@ public class SocialGame extends BaseGame {
 								public void handle(Control control) {
 									Game.getSocializer().createAuth("facebook").login(new ILoginCallback() {										
 										@Override
-										public void onLoginSuccess(String userId) {
+										public void onLoginSuccess(Player player) {
 											
 										}
 										

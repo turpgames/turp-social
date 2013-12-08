@@ -5,6 +5,9 @@ import org.robovm.cocoatouch.uikit.UIApplication;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
+import com.turpgames.framework.v0.impl.ios.IOSProvider;
+import com.turpgames.framework.v0.impl.libgdx.GdxGame;
+import com.turpgames.framework.v0.util.Game;
 
 public class RobovmLauncher extends IOSApplication.Delegate {
 	@Override
@@ -12,7 +15,10 @@ public class RobovmLauncher extends IOSApplication.Delegate {
 		IOSApplicationConfiguration config = new IOSApplicationConfiguration();
 		config.orientationLandscape = true;
 		config.orientationPortrait = false;
-		return new IOSApplication(new SocialGame(), config);
+		
+		Game.setEnvironmentProvider(new IOSProvider());
+		
+		return new IOSApplication(new GdxGame(), config);
 	}
 
 	public static void main(String[] argv) {
