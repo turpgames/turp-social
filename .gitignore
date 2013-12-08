@@ -32,7 +32,7 @@ local.properties
 # Android
 gen/
 *.keystore
-oauth_consumer.properties
+*oauth_consumer.properties*
 
 #################
 ## Visual Studio
