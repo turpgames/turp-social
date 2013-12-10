@@ -72,6 +72,12 @@
                 action="login-facebook"
                 resource-text="loginFacebook"
                 y="21" />
+
+            <button
+                id="btnPostSocial"
+                action="post-facebook"
+                resource-text="postFacebook"
+                y="18" />
         </form>
     </forms>
 
@@ -84,7 +90,7 @@
 
             <font
                 id="akachen"
-                           path="fonts/chinese/akachen_chinese.fnt" />
+                path="fonts/chinese/akachen_chinese.fnt" />
         </fonts>
 
         <textures>

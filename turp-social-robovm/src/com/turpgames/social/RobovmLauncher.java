@@ -1,6 +1,8 @@
 package com.turpgames.social;
 
+import org.robovm.bindings.facebook.manager.FacebookManager;
 import org.robovm.cocoatouch.foundation.NSAutoreleasePool;
+import org.robovm.cocoatouch.foundation.NSURL;
 import org.robovm.cocoatouch.uikit.UIApplication;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
@@ -13,8 +15,8 @@ public class RobovmLauncher extends IOSApplication.Delegate {
 	@Override
 	protected IOSApplication createApplication() {
 		IOSApplicationConfiguration config = new IOSApplicationConfiguration();
-		config.orientationLandscape = true;
-		config.orientationPortrait = false;
+		config.orientationLandscape = false;
+		config.orientationPortrait = true;
 		
 		Game.setEnvironmentProvider(new IOSProvider());
 		
@@ -25,5 +27,11 @@ public class RobovmLauncher extends IOSApplication.Delegate {
 		NSAutoreleasePool pool = new NSAutoreleasePool();
 		UIApplication.main(argv, null, RobovmLauncher.class);
 		pool.drain();
+	}
+	
+	@Override
+	public boolean handleOpenURL (UIApplication application, NSURL url) {
+		System.out.println("handleOpenURL");
+		return FacebookManager.getInstance().handleOpenUrl(url);
 	}
 }
