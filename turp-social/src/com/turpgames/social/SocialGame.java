@@ -1,5 +1,7 @@
 package com.turpgames.social;
 
+import java.util.Date;
+
 import com.turpgames.framework.v0.forms.xml.Control;
 import com.turpgames.framework.v0.forms.xml.IControlActionHandler;
 import com.turpgames.framework.v0.forms.xml.IControlActionHandlerFactory;
@@ -31,7 +33,7 @@ public class SocialGame extends BaseGame {
 							return new IControlActionHandler() {
 								@Override
 								public void handle(Control control) {
-									Game.getSocializer().createAuth("facebook").login(new ILoginCallback() {										
+									Game.getSocializer("facebook").login(new ILoginCallback() {										
 										@Override
 										public void onLoginSuccess(Player player) {
 											System.out.println("social-id:  " + player.getSocialId());
@@ -52,7 +54,7 @@ public class SocialGame extends BaseGame {
 							return new IControlActionHandler() {
 								@Override
 								public void handle(Control control) {
-									Game.getSocializer().createAuth("facebook").postText("Sent from my iPhone.", new IPostCallback() {
+									Game.getSocializer("facebook").postText("Sent from my Android: " + new Date(), new IPostCallback() {
 										
 										@Override
 										public void postSent() {
